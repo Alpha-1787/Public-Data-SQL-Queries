@@ -1,4 +1,5 @@
 # Query for avg bike/dock availability, avg trip count, and duration for any given day, hour of the day per station
+# uses Common Table Expression
 
 WITH trip_origins AS 
 	(SELECT 
