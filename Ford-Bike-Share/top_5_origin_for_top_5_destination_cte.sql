@@ -1,9 +1,10 @@
-# getting top 5 origin station for each desitnation station with common table expression
+# getting top 5 origin station by trrip count for the top 5 destination station by trip count with common table expression
 WITH top_destination_origin AS 
 	(SELECT
 		bt.end_station_name,
 		bt.start_station_name,
-		DENSE_RANK() OVER (PARTITION BY bt.end_station_name ORDER BY COUNT(*) DESC, bt.end_station_name) AS trip_count_rank,
+		DENSE_RANK() OVER (PARTITION BY bt.end_station_name 
+				   ORDER BY COUNT(*) DESC, bt.end_station_name) AS trip_count_rank,
 		COUNT(*) AS trip_count,
 		ROUND(AVG(bt.duration_sec)/60, 2) AS avg_trip_duration_min
 	FROM
