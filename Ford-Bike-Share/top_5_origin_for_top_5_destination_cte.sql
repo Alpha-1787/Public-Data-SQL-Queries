@@ -1,4 +1,6 @@
-# getting top 5 origin station by trrip count for the top 5 destination station by trip count with common table expression
+# getting top 5 origin station by trip count for the top 5 destination station by trip count with common table expression
+
+# ranks the start_station_name by trip count for each end_station_name
 WITH top_destination_origin AS 
 	(SELECT
 		bt.end_station_name,
@@ -12,6 +14,7 @@ WITH top_destination_origin AS
 	GROUP BY
 		bt.start_station_name,
 		bt.end_station_name),
+# ranks the end_station_name by trip count
 top_destination AS
 	(SELECT
 		bt.end_station_name,
