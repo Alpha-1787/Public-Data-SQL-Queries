@@ -45,7 +45,7 @@ LEFT JOIN
 		EXTRACT(DAYOFWEEK FROM bt.start_date AT TIME ZONE "America/Los_Angeles") AS day_of_week,  
 		EXTRACT(HOUR FROM bt.start_date AT TIME ZONE "America/Los_Angeles") AS hour_of_day,
 		ROUND(COUNT(*)/COUNT(DISTINCT(EXTRACT(DATE from bt.start_date AT TIME ZONE "America/Los_Angeles"))),
-          	  2) AS avg_trip_count,
+          	      2) AS avg_trip_count,
 		ROUND(AVG(bt.duration_sec/60)) AS avg_trip_duration_min
 	FROM 
 		`bigquery-public-data.san_francisco.bikeshare_trips` bt
