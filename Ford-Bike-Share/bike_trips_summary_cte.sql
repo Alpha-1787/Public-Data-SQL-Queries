@@ -1,5 +1,5 @@
 # Query for avg bike/dock availability, avg trip count, and duration for any given day, hour of the day per station
-# uses Common Table Expression
+# Uses Common Table Expression
 
 WITH trip_origins AS 
 	(SELECT 
@@ -40,13 +40,14 @@ station_availability AS
 SELECT 
 	sa.station_name,
 	CASE 
-    WHEN sa.day_of_week = 1 THEN "SUNDAY"
+    		WHEN sa.day_of_week = 1 THEN "SUNDAY"
 		WHEN sa.day_of_week = 2 THEN "MONDAY"
 		WHEN sa.day_of_week = 3 THEN "TUESDAY"
 		WHEN sa.day_of_week = 4 THEN "WEDNESDAY"
 		WHEN sa.day_of_week = 5 THEN "THURSDAY"
 		WHEN sa.day_of_week = 6 THEN "FRIDAY"
-		ELSE "SATURDAY" END AS day_of_week,
+		ELSE "SATURDAY" 
+	END AS day_of_week,
 	sa.hour_of_day,
 	sa.dock_count,
 	IFNULL(sa.avg_bikes_available, 0) AS avg_bikes_available,
