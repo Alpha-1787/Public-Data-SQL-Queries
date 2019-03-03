@@ -10,7 +10,8 @@ SELECT
 		WHEN sa.day_of_week = 4 THEN "WEDNESDAY"
 		WHEN sa.day_of_week = 5 THEN "THURSDAY"
 		WHEN sa.day_of_week = 6 THEN "FRIDAY"
-		ELSE "SATURDAY" END AS day_of_week,
+		ELSE "SATURDAY" 
+	END AS day_of_week,
 	sa.hour_of_day,
 	sa.dock_count,
 	IFNULL(sa.avg_bikes_available, 0) AS avg_bikes_available,
