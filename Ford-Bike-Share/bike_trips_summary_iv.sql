@@ -4,7 +4,7 @@
 SELECT 
 	sa.station_name,
 	CASE 
-    WHEN sa.day_of_week = 1 THEN "SUNDAY"
+    		WHEN sa.day_of_week = 1 THEN "SUNDAY"
 		WHEN sa.day_of_week = 2 THEN "MONDAY"
 		WHEN sa.day_of_week = 3 THEN "TUESDAY"
 		WHEN sa.day_of_week = 4 THEN "WEDNESDAY"
