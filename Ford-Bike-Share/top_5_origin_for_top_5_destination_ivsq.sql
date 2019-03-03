@@ -1,3 +1,4 @@
+# getting top 5 origin station by trip count for the top 5 destination station by trip count with inline view and subquery
 SELECT
 	tdo.end_station_name,
 	tdo.start_station_name,
