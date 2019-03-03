@@ -35,7 +35,7 @@ FROM
 			bs.station_id = bst.station_id
 	GROUP BY
 		station_name,
-    bst.station_id,
+    		bst.station_id,
 		day_of_week,
 		hour_of_day) sa
 LEFT JOIN 
