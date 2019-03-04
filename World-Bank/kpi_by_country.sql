@@ -39,14 +39,14 @@ country_latest AS
 	WHERE
 		hnp.year IN
 			(SELECT -- correlated subquery to grab the latest value for each indicator for each country
-	      		MAX(year)
-	      	FROM
-	      		`bigquery-public-data.world_bank_health_population.health_nutrition_population`
-	     	WHERE 
-	     		country_name = hnp.country_name
-	     		AND indicator_name = hnp.indicator_name
-	     		AND indicator_code = hnp.indicator_code
-	     		AND country_code = hnp.country_code)
+	      			MAX(year)
+			FROM
+				`bigquery-public-data.world_bank_health_population.health_nutrition_population`
+			WHERE 
+				country_name = hnp.country_name
+				AND indicator_name = hnp.indicator_name
+				AND indicator_code = hnp.indicator_code
+				AND country_code = hnp.country_code)
 		AND ss.topic = (SELECT topic FROM vars))
 SELECT 
 	cl.country_name,
