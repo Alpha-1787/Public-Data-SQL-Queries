@@ -2,7 +2,7 @@
 # Uses Common Table Expression
 # Will return the same results as bike_trips_summary_iv.sql
 
-# gather all
+# collect the average trip count and duration for each station at any given day of the week and at any given hour of the day
 WITH trip_origins AS 
 	(SELECT 
 		bt.start_station_name,
@@ -10,7 +10,7 @@ WITH trip_origins AS
 		EXTRACT(DAYOFWEEK FROM bt.start_date AT TIME ZONE "America/Los_Angeles") AS day_of_week,  
 		EXTRACT(HOUR FROM bt.start_date AT TIME ZONE "America/Los_Angeles") AS hour_of_day,
 		ROUND(COUNT(*)/COUNT(DISTINCT(EXTRACT(DATE from bt.start_date AT TIME ZONE "America/Los_Angeles"))),
-          	  2) AS avg_trip_count,
+          	      2) AS avg_trip_count,
 		ROUND(AVG(bt.duration_sec/60)) AS avg_trip_duration_min
 	FROM 
 		`bigquery-public-data.san_francisco.bikeshare_trips` bt
@@ -19,6 +19,7 @@ WITH trip_origins AS
 		bt.start_station_id,
 		day_of_week,
 		hour_of_day),
+# collect the avg available docks/bikes and duration for each station at any given day of the week and at any given hour of the day
 station_availability AS
 	(SELECT 
 		bst.name AS station_name,
