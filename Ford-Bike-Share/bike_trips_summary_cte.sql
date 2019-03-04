@@ -2,7 +2,7 @@
 # Uses Common Table Expression
 # Will return the same results as bike_trips_summary_iv.sql
 
-# collect the average trip count and duration for each station at any given day of the week and at any given hour of the day
+# collect the avg trip count and duration for each station at any given hour/day
 WITH trip_origins AS 
 	(SELECT 
 		bt.start_station_name,
@@ -19,7 +19,7 @@ WITH trip_origins AS
 		bt.start_station_id,
 		day_of_week,
 		hour_of_day),
-# collect the avg available docks/bikes and duration for each station at any given day of the week and at any given hour of the day
+# collect the avg available docks/bikes and duration for each station at any given hour/day
 station_availability AS
 	(SELECT 
 		bst.name AS station_name,
