@@ -1,6 +1,6 @@
-# Query for avg bike/dock availability, avg trip count, and duration for any given day, hour of the day per station
-# Uses Common Table Expression
-# Will return the same results as bike_trips_summary_iv.sql
+# query for avg bike/dock availability, avg trip count, and duration for any given day, hour of the day per station
+# uses Common Table Expression
+# will return the same results as bike_trips_summary_iv.sql
 
 # collect the avg trip count and duration for each station at any given hour/day
 WITH trip_origins AS 
