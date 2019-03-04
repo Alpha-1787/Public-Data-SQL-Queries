@@ -1,5 +1,6 @@
 # Query for avg bike/dock availability, avg trip count, and duration for any given day, hour of the day per station
 # Uses joined inline views
+# Will return the same results as bike_trips_summary_cte.sql
 
 SELECT 
 	sa.station_name,
@@ -19,6 +20,7 @@ SELECT
 	IFNULL(tog.avg_trip_count, 0) AS avg_trip_count,
 	IFNULL(tog.avg_trip_duration_min, 0) AS avg_trip_duration_min
 FROM 
+# collect the avg available docks/bikes and duration for each station at any given hour/day
 	(SELECT 
 		bst.name AS station_name,
 		bst.station_id,
@@ -38,6 +40,7 @@ FROM
     		bst.station_id,
 		day_of_week,
 		hour_of_day) sa
+# collect the avg trip count and duration for each station at any given hour/day
 LEFT JOIN 
 	(SELECT 
 		bt.start_station_name,
