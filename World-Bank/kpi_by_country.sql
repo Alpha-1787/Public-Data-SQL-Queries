@@ -4,6 +4,7 @@
 WITH vars AS 
 	(SELECT 
 		'Education: Outcomes' AS topic),
+# collect the global median value for each indicator
 global_summary AS
 	(SELECT DISTINCT
 		ss.topic,
@@ -19,6 +20,7 @@ global_summary AS
 		ss.series_code = hnp.indicator_code
 	WHERE
 		ss.topic = (SELECT topic FROM vars)),
+# collect the latest indicator and its corresponding value for each country
 country_latest AS 
 	(SELECT 
 		hnp.country_name,
