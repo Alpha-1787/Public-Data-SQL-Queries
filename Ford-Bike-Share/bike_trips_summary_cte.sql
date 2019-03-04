@@ -2,6 +2,7 @@
 # Uses Common Table Expression
 # Will return the same results as bike_trips_summary_iv.sql
 
+# gather all
 WITH trip_origins AS 
 	(SELECT 
 		bt.start_station_name,
