@@ -24,7 +24,7 @@ country_latest AS
 		hnp.country_name,
 		hnp.year,
 		ss.topic,
-    	hnp.indicator_code,
+    		hnp.indicator_code,
 		hnp.indicator_name,
 		hnp.value AS country_value,
 		ss.unit_of_measure
