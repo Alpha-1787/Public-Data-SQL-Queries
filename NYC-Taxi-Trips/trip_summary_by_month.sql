@@ -1,4 +1,5 @@
-# Queries out trip count and avg duration for each type of vehicles (FHV, Yellow Taxi, Green Taxi) for each borough/zone that has more than 100 trips per month.
+/* Queries out trip count and avg duration for each type of vehicles (FHV, Yellow Taxi, Green Taxi) 
+for each borough/zone that has more than 100 trips per month. */
 
 # grab for hire vehicle trip count and avg duration by month for each borough/zone
 WITH fhv_trips AS 
