@@ -1,4 +1,4 @@
-# grabs each country's most recent KPIs and the corresponding the global median to serve as comparison.
+/* Grabs each country's most recent KPIs and the corresponding the global median to serve as comparison. */
 
 # used to narrow down the KPIs to 'Education: Outcomes' topic
 WITH vars AS 
