@@ -1,6 +1,5 @@
-# query for avg bike/dock availability, avg trip count, and duration for any given day, hour of the day per station
-# uses joined inline views
-# will return the same results as bike_trips_summary_cte.sql
+/* Query for avg bike/dock availability, avg trip count, and duration for any given day, hour of the day per station.
+Uses joined inline views. Will return the same results as bike_trips_summary_cte.sql */
 
 SELECT 
 	sa.station_name,
