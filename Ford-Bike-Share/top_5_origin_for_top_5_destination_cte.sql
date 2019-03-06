@@ -1,5 +1,5 @@
-# getting top 5 origin station by trip count for the top 5 destination station by trip count with common table expression
-# will return the same results as top_5_origin_for_top_5_destination_ivsq.sql
+/* Queries top 5 origin station by trip count for the top 5 destination station by trip count with common table expression.
+Will return the same results as top_5_origin_for_top_5_destination_ivsq.sql *\
 
 # ranks the start_station_name by trip count for each end_station_name
 WITH top_destination_origin AS 
