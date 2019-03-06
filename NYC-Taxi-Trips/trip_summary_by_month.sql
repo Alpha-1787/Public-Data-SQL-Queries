@@ -92,7 +92,7 @@ yellow_trips AS
 		dropoff_zone
 	HAVING
 		trip_count > 100)
-# combine the results onto one and sort it
+# combine the results from the CTEs into one and sort it
 SELECT 
   *
 FROM 
