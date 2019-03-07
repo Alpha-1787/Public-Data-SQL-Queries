@@ -1,4 +1,4 @@
-/* daily ride data + weather */
+/* daily trip data + weather */
 
 # daily weather data
 WITH daily_weather AS
