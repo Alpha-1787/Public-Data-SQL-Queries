@@ -1,3 +1,3 @@
 # Public-Data-SQL-Queries
 
-The repo contains various SQL queries for exploring the various public data sets that are available through GCP.
+The repo contains various SQL queries for exploring the various public data sets that are available through GCP. Majority of them have minimal filter, so that they can be used in conjunction with Tableau for visualization purposes.
