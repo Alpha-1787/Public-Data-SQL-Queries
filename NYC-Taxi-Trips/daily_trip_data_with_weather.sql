@@ -1,4 +1,4 @@
-/* daily trip data + weather */
+/* daily trip data + weather in 2017 */
 
 # daily weather data
 WITH daily_weather AS
